@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import struct
-from binaryIO import BinaryReader
+from BinaryIO import BinaryReader
 from GIDecode import getPaletteData , paint8BPP,setAlphaPalette256
 from PIL import Image
 
