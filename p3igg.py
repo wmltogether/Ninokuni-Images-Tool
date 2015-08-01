@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import struct
-from BinaryIO import BinaryReader
+from binaryIO import BinaryReader
 from GIDecode import getPaletteData , paint8BPP,setAlphaPalette256
 from PIL import Image
 
@@ -137,24 +137,5 @@ def logSpecialPalette():
         d = chr(i)
         Palette_data += (b + c + d + a)
     return Palette_data
-
-
-def dir_fn(adr ,ext_name):
-    dirlst=[]
-    for root,dirs,files in os.walk(adr):
-        for name in files:
-            ext = name.split('.')[-1]
-            adrlist=os.path.join(root, name)
-            if ext.lower() in ext_name:
-                dirlst.append(adrlist)
-    return dirlst
-
-if not os.path.exists("data"):
-    os.makedirs("data")
-fl = dir_fn("data" , "p3img")
-for fn in fl:
-    gen_p3img(fn)
-
-
 
 
